@@ -1,0 +1,3 @@
+Hello world!
+Thish is the first text
+for test file
