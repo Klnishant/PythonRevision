@@ -25,4 +25,10 @@ def form():
         return f"Hello, {name}!"
     return render_template("form.html")
 
+#Write a Flask route that displays a list of names in an HTML unordered list.
+@app.route("/names")
+def names():
+    names = ["Alice", "Bob", "Charlie", "David"]
+    return render_template("names.html", names=names)
+
 app.run()
