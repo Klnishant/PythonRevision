@@ -31,4 +31,10 @@ def names():
     names = ["Alice", "Bob", "Charlie", "David"]
     return render_template("names.html", names=names)
 
+#Q6. Write a Flask route that displays a list of names in a table.
+@app.route("/names/table")
+def name_with_tables():
+    names = ["Alice", "Bob", "Charlie", "David"]
+    return render_template("table.html",names=names)
+
 app.run()
