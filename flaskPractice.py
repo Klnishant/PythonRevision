@@ -37,4 +37,10 @@ def name_with_tables():
     names = ["Alice", "Bob", "Charlie", "David"]
     return render_template("table.html",names=names)
 
+#Q7. Write a Flask route that displays a list of names in a dropdown menu.
+@app.route("/dropdown")
+def name_in_drop_down():
+    names = ["Alice", "Bob", "Charlie", "David"]
+    return render_template("dropdown.html",names=names)
+
 app.run()
