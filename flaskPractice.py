@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
@@ -42,5 +42,11 @@ def name_with_tables():
 def name_in_drop_down():
     names = ["Alice", "Bob", "Charlie", "David"]
     return render_template("dropdown.html",names=names)
+
+#Q8. Write a Flask route that receives data through a POST request and returns the data in JSON format.
+@app.route("/json")
+def data_in_json():
+    data = request.get_json()
+    return jsonify(data)
 
 app.run()
