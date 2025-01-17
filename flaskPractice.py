@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect, url_for
 
 app = Flask(__name__)
 
@@ -44,9 +44,14 @@ def name_in_drop_down():
     return render_template("dropdown.html",names=names)
 
 #Q8. Write a Flask route that receives data through a POST request and returns the data in JSON format.
-@app.route("/json")
+@app.route("/json", methods=["POST"])
 def data_in_json():
     data = request.get_json()
     return jsonify(data)
 
-app.run()
+# Q9. Write a Flask route that redirects the user to a different URL.
+@app.route("/redirect-me", methods=["GET"])
+def redirect_me():
+    return redirect(url_for("names"))
+
+app.run(debug=True)
